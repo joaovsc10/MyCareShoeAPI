@@ -195,6 +195,7 @@ function searchByStartEndDate($data){
 
 	if($data['start_date']!=$data['end_date'])
 	{
+		
     $query = "SELECT
                 *
             FROM
@@ -246,7 +247,6 @@ function searchByStartEndDate($data){
 	
     // execute query
     if($stmt->execute()){
-	
 		return $stmt;
 	}
 	
@@ -282,4 +282,3 @@ function searchByPatient($keywords){
 
 
 }
-?>
