@@ -22,7 +22,7 @@ $data = array();
 parse_str($_SERVER['QUERY_STRING'], $data);
 
 // set patient's property values
-$fields= array("gender", "height", "weight", "feet_size", "diabetes", "type_feet", "patient_number", "pressure_threshold", "occurences_number", "time_interval");
+$fields= array("gender", "height", "weight", "feet_size", "diabetes", "type_feet", "patient_number", "pressure_threshold", "occurences_number", "time_interval", "name", "birth");
 
 foreach($fields as $field)
 {
@@ -58,6 +58,3 @@ else{
     // tell the user
     echo json_encode(array("message" => "Unable to update patient's info!"));
 }
-
-
-?>
