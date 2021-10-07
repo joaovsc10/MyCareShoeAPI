@@ -47,6 +47,3 @@ foreach($fields as $field)
 $json_update=$user->update($data);
   
 echo json_encode($json_update);
-
-
-?>
