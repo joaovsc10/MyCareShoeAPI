@@ -97,4 +97,3 @@ else{
     // tell the user
     echo json_encode(array("success" => "0", "message" => "Unable to create sensors reading. Data is incomplete."));
 }
-?>
