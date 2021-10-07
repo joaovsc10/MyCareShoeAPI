@@ -217,7 +217,12 @@ class User
             $_SESSION['username'] = $this->username;
             $_SESSION['id'] = $this->user_id;
             $_SESSION['profile_id'] = $this->profile_id;
-            header("location: http://localhost/mycareshoewebsite/site/index.php");
+
+            if($_SESSION['profile_id']==2)
+              header("location: http://localhost/mycareshoewebsite/site/index.php");
+            else {
+              header("location: http://localhost/mycareshoewebsite/site/admin.php");
+            }
         } else {
             $json['success'] = sha1("patient");
             if ($canUserLogin && $this->access_permission == "0")
@@ -232,8 +237,8 @@ class User
     function update($updateData)
     {
 
-
-        $json = $this->existingDataValidation($updateData['username'], $updateData['email'], null, true, $updateData['user_id']);
+        if(isset($updateData['username']) && isset($updateData['username']))
+          $json = $this->existingDataValidation($updateData['username'], $updateData['email'], null, true, $updateData['user_id']);
 
         if (!isset($json)) {
 

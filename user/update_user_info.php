@@ -32,15 +32,20 @@ foreach($fields as $field)
 	if(isset($data[$field])){
 
 		$user->$field = $data[$field];
+		if($field == "password")
+        $data["password"] = sha1( $data["password"]);
 	}else{
         if(isset($_POST[$field])){
-            $data[$field]=$_POST[$field];
-            $user->$field =$_POST[$field];
+						if($field == "password"){
+			        $data["password"] = sha1( $_POST["password"]);}
+						else{
+            	$data[$field]=$_POST[$field];
+						}
+            $user->$field =$data[$field];
         }
     }
 
-    if($field == "password")
-        $data["password"] = sha1( $data["password"]);
+
 }
 
 
