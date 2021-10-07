@@ -96,6 +96,7 @@ class User
                 if ($stmt->rowCount() == 1) {
 
                     if ($row[$fieldName] != $fieldValue)
+
                         return $fieldName;
                 }
 
@@ -112,6 +113,7 @@ class User
     {
 
         $data = array();
+
         $isEmailExisting = $this->isDataExist("email", $email, $isUpdate, $user_id);
         $isUsernameExisting = $this->isDataExist("username", $username, $isUpdate, $user_id);
 
@@ -213,7 +215,8 @@ class User
             session_start();
 
             $_SESSION['username'] = $this->username;
-            $_SESSION['id'] = $this->profile_id;
+            $_SESSION['id'] = $this->user_id;
+            $_SESSION['profile_id'] = $this->profile_id;
             header("location: http://localhost/mycareshoewebsite/site/index.php");
         } else {
             $json['success'] = sha1("patient");
