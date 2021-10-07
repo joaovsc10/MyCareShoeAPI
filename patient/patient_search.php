@@ -67,4 +67,3 @@ else{
         array("message" => "No patient data found.")
     );
 }
-?>
