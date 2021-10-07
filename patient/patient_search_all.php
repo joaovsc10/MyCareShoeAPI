@@ -26,7 +26,7 @@ if ($num > 0) {
 
 	while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 
-		echo "<tr class='clickable-row' data-href='http://localhost/tele/site/patient_details.php?patient_number=" . $row["patient_number"] . "'>";
+		echo "<tr class='clickable-row' data-href='http://localhost/mycareshoewebsite/site/patient_details.php?patient_number=" . $row["patient_number"] . "'>";
 
 		echo "<td>" . $row["patient_number"] . "</td>";
 		echo "<td>" . $row["gender"] . "</td>";

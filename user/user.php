@@ -214,14 +214,14 @@ class User
 
             $_SESSION['username'] = $this->username;
             $_SESSION['id'] = $this->profile_id;
-            header("location: http://localhost/tele/site/index.php");
+            header("location: http://localhost/mycareshoewebsite/site/index.php");
         } else {
             $json['success'] = sha1("patient");
             if ($canUserLogin && $this->access_permission == "0")
                 $json['message'] = "Access denied";
             else
                 $json['message'] = "Invalid username or password";
-            header("location: http://localhost/tele/site/log_in.php");
+            header("location: http://localhost/mycareshoewebsite/site/log_in.php");
         }
         return $json;
     }
