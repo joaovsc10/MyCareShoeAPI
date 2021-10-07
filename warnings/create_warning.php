@@ -66,4 +66,3 @@ else{
     // tell the user
     echo json_encode(array("message" => "Unable to create warning reading. Data is incomplete."));
 }
-?>
