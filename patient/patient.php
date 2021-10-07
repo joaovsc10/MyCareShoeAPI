@@ -193,4 +193,3 @@ $query = substr($query,0,-2)." WHERE patient_number = :patient_number";
     return $return;
 }
 }
-?>
