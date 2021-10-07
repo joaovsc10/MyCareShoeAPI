@@ -1,14 +1,14 @@
 <?php
 
 
-  
+
 // database connection will be here
 require_once 'patient.php';
-require_once (__DIR__.'\..\db\db_connect.php');
+require_once(__DIR__ . '\..\db\db_connect.php');
 
-  
-  
-  // instantiate database and product object
+
+
+// instantiate database and product object
 $database = new DbConnect();
 $db = $database->getConnection();
 
@@ -18,25 +18,21 @@ $patient = new Patient($db);
 
 $result = $patient->readAll();
 $num = $result->rowCount();
-  
+
 // check if more than 0 record found
-if($num>0){
-	
-	
+if ($num > 0) {
 
-    while ($row = $result->fetch(PDO::FETCH_ASSOC)){
-        
-		echo "<tr class='clickable-row' data-href='http://localhost/tele/site/patient_details.php?patient_number=" .$row["patient_number"] ."'>";
 
-		echo "<td>" . $row["patient_number"]. "</td>";
-		echo "<td>" . $row["gender"]. "</td>";
-		echo "<td>" . $row["birth"]. "</td>";
-		echo "<td>" . $row["name"]. "</td>";
+
+	while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+
+		echo "<tr class='clickable-row' data-href='http://localhost/tele/site/patient_details.php?patient_number=" . $row["patient_number"] . "'>";
+
+		echo "<td>" . $row["patient_number"] . "</td>";
+		echo "<td>" . $row["gender"] . "</td>";
+		echo "<td>" . $row["birth"] . "</td>";
+		echo "<td>" . $row["name"] . "</td>";
 
 		echo "</tr>\n";
-  }
-  
+	}
 }
-  
-
-
