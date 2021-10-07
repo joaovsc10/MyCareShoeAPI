@@ -74,4 +74,3 @@ else{
     // tell the user
     echo json_encode(array("success" => "0", "message" => "Unable to create statistics record. Data is incomplete."));
 }
-?>
