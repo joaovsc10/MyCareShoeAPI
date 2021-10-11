@@ -214,10 +214,11 @@ class User
 
             session_start();
 
+            if($this->profile_id!=1){
             $_SESSION['username'] = $this->username;
             $_SESSION['id'] = $this->user_id;
             $_SESSION['profile_id'] = $this->profile_id;
-
+}
 
         } else {
             $json['success'] = sha1("patient");

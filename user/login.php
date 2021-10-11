@@ -73,7 +73,6 @@ if (!empty($password)) {
 		$json_array = $userObject->loginUsers($email, $hashed_password, 1);
 
 
-
 	echo json_encode($json_array);
 }
 
