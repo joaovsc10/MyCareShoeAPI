@@ -1,5 +1,5 @@
 <?php
-$host="localhost";
+$host="10.8.129.207";
 $user="root";
 $password="";
 $con=mysqli_connect($host,$user,$password);
