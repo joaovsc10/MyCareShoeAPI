@@ -219,9 +219,9 @@ class User
             $_SESSION['profile_id'] = $this->profile_id;
 
             if($_SESSION['profile_id']==2)
-              header("location: http://localhost/mycareshoewebsite/site/index.php");
+              header("location: http://10.8.129.207/mycareshoewebsite/site/index.php");
             else {
-              header("location: http://localhost/mycareshoewebsite/site/admin.php");
+              header("location: http://10.8.129.207/mycareshoewebsite/site/admin.php");
             }
         } else {
             $json['success'] = sha1("patient");
@@ -229,7 +229,7 @@ class User
                 $json['message'] = "Access denied";
             else
                 $json['message'] = "Invalid username or password";
-            header("location: http://localhost/mycareshoewebsite/site/log_in.php");
+            header("location: http://10.8.129.207/mycareshoewebsite/site/log_in.php");
         }
         return $json;
     }
