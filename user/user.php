@@ -218,19 +218,13 @@ class User
             $_SESSION['id'] = $this->user_id;
             $_SESSION['profile_id'] = $this->profile_id;
 
-            if($_SESSION['profile_id']==2)
-              header("location: http://10.8.129.207/mycareshoewebsite/site/index.php");
-            else {
-              if($_SESSION['profile_id']==3)
-                header("location: http://10.8.129.207/mycareshoewebsite/site/admin.php");
-            }
+
         } else {
             $json['success'] = sha1("patient");
             if ($canUserLogin && $this->access_permission == "0")
                 $json['message'] = "Access denied";
             else
                 $json['message'] = "Invalid username or password";
-            header("location: http://10.8.129.207/mycareshoewebsite/site/log_in.php");
         }
         return $json;
     }
