@@ -221,7 +221,7 @@ class User
 }
 
         } else {
-            $json['success'] = sha1("patient");
+            $json['success'] = 0;
             if ($canUserLogin && $this->access_permission == "0")
                 $json['message'] = "Access denied";
             else
