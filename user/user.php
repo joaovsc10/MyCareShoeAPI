@@ -249,9 +249,13 @@ class User
                     $params[$key] = $value;
                 }
             }
-            // Cut off last comma and append WHERE clause
+
+            if(isset($updateData['user_id']))
+            {
             $query = substr($query, 0, -2) . " WHERE user_id = :user_id";
-            // Store id for prepared statement
+          }else{
+            $query = substr($query, 0, -2) . " WHERE patient_number = :patient_number";
+          }
 
 
 

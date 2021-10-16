@@ -22,7 +22,7 @@ $data = array();
 parse_str($_SERVER['QUERY_STRING'], $data);
 
 // set patient's property values
-$fields= array("profile_id", "email", "password", "username", "access_permission", "user_id");
+$fields= array("profile_id", "email", "password", "username", "access_permission", "user_id", "patient_number");
 
 
 foreach($fields as $field)
