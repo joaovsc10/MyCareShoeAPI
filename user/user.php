@@ -33,10 +33,10 @@ class User
     {
 
         if ($isEmailSet == 0)
-            $query = "select * from " . $this->db_table . " where username = '$usernameEmail' AND password = '$password' Limit 1";
+            $query = "select * from " . $this->db_table . " where BINARY username = '$usernameEmail' AND password = '$password' Limit 1";
 
         elseif ($isEmailSet == 1)
-            $query = "select * from " . $this->db_table . " where email = '$usernameEmail' AND password = '$password' Limit 1";
+            $query = "select * from " . $this->db_table . " where BINARY email = '$usernameEmail' AND password = '$password' Limit 1";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -71,7 +71,7 @@ class User
     {
 
 
-        $query = "select * from " . $this->db_table . " where " . $fieldName . " = :field";
+        $query = "select * from " . $this->db_table . " where BINARY " . $fieldName . " = :field";
 
         // prepare query statement
         $stmt = $this->conn->prepare($query);
