@@ -124,7 +124,9 @@ class User
         if ($isEmailExisting != false || (isset($isPatientNumberExisting) && $isPatientNumberExisting != false) || $isUsernameExisting != false) {
             $json['message'] = "Error in registering. The following fields already exists: ";
 
-
+            if($isUpdate){
+              $json['message'] = "Error in updating user info. The following fields already exists: ";
+            }
             $data = array(
                 "email" => $isEmailExisting,
                 "username" => $isUsernameExisting
