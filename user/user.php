@@ -224,7 +224,7 @@ class User
 
         } else {
             $json['success'] = 0;
-            if ($canUserLogin && $this->access_permission == "0")
+            if ($canUserLogin && $this->access_permission != "1")
                 $json['message'] = "Access denied";
             else
                 $json['message'] = "Invalid username or password";
